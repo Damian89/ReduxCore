@@ -200,7 +200,7 @@ if( !class_exists( 'Simple_System_Info' ) ) {
             $return .= "\n" . '-- Webserver Configuration' . "\n\n";
             $return .= 'PHP Version:              ' . PHP_VERSION . "\n";
             $return .= 'MySQL Version:            ' . mysql_get_server_info() . "\n";
-            $return .= 'Webserver Info:           ' . $_SERVER['SERVER_SOFTWARE'] . "\n";
+            $return .= 'Webserver Info:           ' . esc_html($_SERVER['SERVER_SOFTWARE']) . "\n";
 
             if( has_filter( 'ssi_after_webserver_config' ) )
                 $return .= apply_filters( 'ssi_after_webserver_config', $return );
